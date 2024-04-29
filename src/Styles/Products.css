@@ -1,0 +1,13 @@
+#parent{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+#card{
+    text-align: center;
+}
+#pdimg{
+ margin: auto;
+
+}

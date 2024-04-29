@@ -1,0 +1,21 @@
+#Loginbox{
+    padding: 30px;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 100px;
+}
+input{
+    margin: 30px;
+    width: 200px;
+    height: 40px;
+}
+button{
+    width: 150px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+label{
+    margin-right: 150px;
+}
+

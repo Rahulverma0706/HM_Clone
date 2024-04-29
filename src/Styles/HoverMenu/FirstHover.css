@@ -1,0 +1,26 @@
+.hover-card-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .hover-card {
+    width: 200px;
+    position: absolute;
+    top: 30px; /* Adjust this value to position the hover card relative to the button */
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1;
+  }
+  
+  /* Hide the hover card by default */
+  .hover-card {
+    display: none;
+  }
+  
+  /* Show the hover card when .hover-card-container is hovered */
+  .hover-card-container:hover .hover-card {
+    display: block;
+  }
+  
