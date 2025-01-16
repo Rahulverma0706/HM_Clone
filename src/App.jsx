@@ -18,12 +18,12 @@ function App() {
         <PrivateRoute>
           <Products/>
         </PrivateRoute>
-      }></Route>
-      <Route path="/products/:id" element={
+      }></Route> 
+       { <Route path="/products/:id" element={
         <PrivateRoute>
           <ProductDetail/>
         </PrivateRoute>
-      }></Route>
+      }></Route>}
       <Route path="/cart" element={<Cart/>}></Route>
     </Routes>
 

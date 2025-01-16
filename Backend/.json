@@ -1,0 +1,166 @@
+[
+    {
+        "name": "Regular Fit Hoodie",
+        "photo": "https://image.hm.com/assets/hm/7d/b0/7db0db4c69070b84643b9b76a9773695da507d31.jpg?imwidth=396",
+        "price":1149
+    },
+    {
+        "name": "Patterned resort shirt",
+        "photo": "https://image.hm.com/assets/hm/27/f8/27f8f459a432c8ea955302c8d57b1b21bac5f271.jpg?imwidth=396",
+        "price":519.61
+    },
+    {
+        "name": "Loose Fit Printed T-shirt",
+        "photo": "https://image.hm.com/assets/hm/7a/dc/7adcd9342c1009a7d56f32801c47a55ec1b0c867.jpg?imwidth=396",
+        "price":399.49
+    },
+    {
+        "name": "Regular Fit T-shirt",
+        "photo": "https://image.hm.com/assets/hm/08/20/08209817b0cefe923558a6dab33353aec39be51a.jpg?imwidth=384",
+        "price":479.39
+    },
+    {
+        "name": "Loose Fit T-shirt",
+        "photo": "https://image.hm.com/assets/hm/8d/a8/8da872af6f055b1719c3b3026aa684b4f6a09ac3.jpg?imwidth=384",
+        "price":459
+    },
+    {
+        "name": "Slim Fit Cotton polo shirt ",
+        "photo": "https://image.hm.com/assets/hm/0d/c5/0dc5e067a2642f648c6034ef03d8f1ed4c2fba58.jpg?imwidth=384",
+        "price":649
+    },
+    {
+        "name": "Regular Fit T-shirt",
+        "photo": "https://image.hm.com/assets/hm/1a/51/1a518c15d9a82f08d72ba0ddac09dc075824065d.jpg?imwidth=384",
+        "price":399.49
+    },
+    {
+        "name": "Regular Fit Waffled T-shirt",
+        "photo": "https://image.hm.com/assets/hm/7f/00/7f0073040b9f2d2148d8f24017b2d2a28896f407.jpg?imwidth=384",
+        "price":519.61
+    },
+    {
+        "name": "Regular Fit T-shirt",
+        "photo": "https://image.hm.com/assets/hm/42/56/4256136347b27871a77e5abe9de752e44e459679.jpg?imwidth=384",
+        "price":479.39
+    },
+    {
+        "name": "Loose Fit Printed T-shirt",
+        "photo": "https://image.hm.com/assets/hm/94/87/9487bdf9d646a13e376946d826cca9b819294071.jpg?imwidth=384",
+        "price":649
+    },
+    {
+        "name": "Loose Fit T-shirt",
+        "photo": "https://image.hm.com/assets/hm/89/d1/89d1ef91c9d77bd11403ee4c48ddf95e91d6e3f0.jpg?imwidth=384",
+        "price":649
+    },
+    {
+        "name": "Loose Fit Printed T-shirt",
+        "photo": "https://image.hm.com/assets/hm/3c/23/3c233d79cae5bc759192cb653707402167bc0756.jpg?imwidth=384",
+        "price":319.59
+    },
+    {
+        "name": "Regular Fit Long-sleeved waffeld top",
+        "photo": "https://image.hm.com/assets/hm/64/ea/64ea3d03521c5fd90966adbe8ca704d363bfe00d.jpg?imwidth=384",
+        "price":679
+    },
+    {
+        "name": "Loose Fit Printed T-shirt",
+        "photo": "https://image.hm.com/assets/hm/7d/b0/7db0db4c69070b84643b9b76a9773695da507d31.jpg?imwidth=396",
+        "price":399
+    },
+    {
+        "name": "Regular Fit Waffled T-shirt",
+        "photo": "https://image.hm.com/assets/hm/9e/8d/9e8deff71c4148d0e2db643ba6331a68c94fbf6e.jpg?imwidth=384",
+        "price":749
+    },
+    {
+        "name": "Loose Fit Short-sleeved shirt",
+        "photo": "https://image.hm.com/assets/hm/58/48/5848eae7b5d4e253e9301fc0e4180e5ffae8434a.jpg?imwidth=384",
+        "price":649
+    },
+    {
+        "name": "Loose Fit Printed T-shirt",
+        "photo": "https://image.hm.com/assets/hm/58/48/5848eae7b5d4e253e9301fc0e4180e5ffae8434a.jpg?imwidth=384",
+        "price":279
+    },
+    {
+        "name": "Loose Fit Short-sleeved shirt",
+        "photo": "https://image.hm.com/assets/hm/d0/9e/d09e74403a2d520561942086b6dcf7d1bfac99f1.jpg?imwidth=384",
+        "price":649
+    },
+    {
+        "name": "small shoulder bag",
+        "photo": "https://image.hm.com/assets/hm/24/78/2478bbc8bd1146a3e2ce101adf6ff433d3ffe35d.jpg?imwidth=384",
+        "price":679
+    },
+    {
+        "name": "Regular Fit Textured resort",
+        "photo": "https://image.hm.com/assets/hm/b0/c3/b0c327bb952fcbe54d9991bf6df0ba8eee46e340.jpg?imwidth=384",
+        "price":999
+    },
+
+
+    
+
+    {
+        "name": "Fine-knit trousers",
+        "photo": "https://image.hm.com/assets/hm/8b/9a/8b9aeec43ee178b41d669ea99474a90135ee513a.jpg?imwidth=384",
+        "price":2299
+    },
+    {
+        "name": "Fine-knit V-neck jumper",
+        "photo": "https://image.hm.com/assets/hm/08/05/0805a4f8f9c3f63f3acc645fc19479a346257ac5.jpg?imwidth=384",
+        "price":1999
+    },
+    {
+        "name": "Fine-knit trousers",
+        "photo": "https://image.hm.com/assets/hm/df/af/dfafa317ed5ce8c3b342c69793ba445d871230c5.jpg?imwidth=384",
+        "price":1999
+    },
+    {
+        "name": "Fine-knit trousers",
+        "photo": "https://image.hm.com/assets/hm/d9/2e/d92ef156f62df06fe0cb0b547b97c612e640e0e9.jpg?imwidth=384",
+        "price":999
+    },
+    {
+        "name": "Flared rib-knit trousers",
+        "photo": "https://image.hm.com/assets/hm/a8/96/a896d89bb2d405c6a32ac3a9a32e8c8e26102cca.jpg?imwidth=384",
+        "price":2299
+    },
+    {
+        "name": "Rib-knit top",
+        "photo": "https://image.hm.com/assets/hm/44/4d/444dc1d4f037d1fd96ce0708a7454a234bb1c036.jpg?imwidth=384",
+        "price":1999
+    },
+    {
+        "name": "Rib-knit collared dress",
+        "photo": "https://image.hm.com/assets/hm/99/ae/99ae973eb639b768d401ecbfe4708a9e760d1cc3.jpg?imwidth=384",
+        "price":2999
+    },
+    {
+        "name": "Fine-knit collred jumper",
+        "photo": "https://image.hm.com/assets/hm/e6/61/e6619161049005abdcaaecab97c3153d912a5a89.jpg?imwidth=384",
+        "price":2299
+    },
+    {
+        "name": "Wrap cardigan",
+        "photo": "https://image.hm.com/assets/hm/84/ae/84ae077b366c497e82d285d97ea0774de5066b66.jpg?imwidth=384",
+        "price":2699
+    },
+    {
+        "name": "Fine-knit joggers",
+        "photo": "https://image.hm.com/assets/hm/97/2b/972b4152aa8bd4ff0bba012fdad2d2e3cf5031f4.jpg?imwidth=384",
+        "price":1999
+    },
+    {
+        "name": "Rib-knit top",
+        "photo": "https://image.hm.com/assets/hm/33/2a/332a323f8b5ec6253669f731c5d411e6467f9eff.jpg?imwidth=384",
+        "price":1999
+    }
+    
+
+
+
+]
+

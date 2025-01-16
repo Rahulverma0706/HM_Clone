@@ -1,6 +1,7 @@
 import Footer from '../Components/Footer'
 import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
+import Slideshow from '../Components/ProductSlideshow'
 import '../Styles/Home.css'
 import { Popover, PopoverTrigger,  PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react'
 
@@ -51,7 +52,7 @@ const Home = () => {
    </div>
 
    <h3>New Arrivals</h3>
-   <div>
+   {/* <div>
    <Tabs variant='soft-rounded' colorScheme='green'  >
   <TabList style={{ marginBottom: '20px', display: 'flex', gap: '100px', margin :'auto', textAlign:'center' }}>
     <Tab>Ladies</Tab>
@@ -86,9 +87,9 @@ const Home = () => {
     </TabPanel>
   </TabPanels>
 </Tabs>
-   </div>
+   </div> */}
     
-  
+<Slideshow/>
 <Footer/>      
     </>
   )

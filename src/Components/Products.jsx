@@ -9,7 +9,7 @@ import Header from "./Header";
 function FetchedData(){
     const [data, setData] = useState([])
     useEffect(()=>{
-        fetch(`https://fakestoreapi.com/products/`)
+        fetch(``)
         .then((res)=>res.json())
         .then(data=>(setData(data)))
         
