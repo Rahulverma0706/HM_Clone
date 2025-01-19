@@ -15,15 +15,17 @@ function App() {
       <Route path="/" element={<Home/>}></Route>
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/products" element={
-        <PrivateRoute>
-          <Products/>
-        </PrivateRoute>
+      // <PrivateRoute>
+      <Products/>
+      // </PrivateRoute>
       }></Route> 
-       { <Route path="/products/:id" element={
-        <PrivateRoute>
-          <ProductDetail/>
-        </PrivateRoute>
-      }></Route>}
+      {/* { <Route path="/products/:id" element={
+        // <PrivateRoute>
+          <ProductDetail />
+          // </PrivateRoute>
+        }/>} */}
+        <Route path="/products/:id" element={<ProductDetail />} />
+
       <Route path="/cart" element={<Cart/>}></Route>
     </Routes>
 

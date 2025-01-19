@@ -1,12 +1,20 @@
 const mongoose = require('mongoose');
+const productRoutes = require('./routes/products');
 require('dotenv').config(); // Load environment variables
 const express = require('express');
 const app = express();
-const corss = require('cors')
+const cors = require('cors')
+const morgan = require('morgan')
 
-app.use(corss())
+app.use(morgan('dev'));
 
-const PORT = process.env.PORT || 5173;
+app.use(cors({
+    origin: 'http://localhost:5173', // Replace with your frontend's URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary methods
+}));
+
+
+const PORT = 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
 // Connect to MongoDB
@@ -21,12 +29,11 @@ mongoose.connect(MONGO_URI)
 app.use(express.json());
 
 // Routes
-const productRoutes = require('./routes/products');
-app.use('/api/products', productRoutes);
+app.use('/products', productRoutes);
 
 // Serve Homepage
 app.get('/', (req, res) => {
-    res.send('<h1>Welcome to the Products App</h1>');
+    res.json({ message: 'Welcome to the Products API' });
 });
 
 app.listen(PORT, () => {

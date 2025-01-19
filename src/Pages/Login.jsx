@@ -12,12 +12,9 @@ const Login = () => {
         e.preventDefault();
         if (email == 'admin@mail.com' && pass == 'admin@1234jkl') {
             setIsLogin(true)
-            
             console.log(isLogin);
         } else {
-            
             alert('You are logged in!');
-            
         }
     }
 
@@ -30,8 +27,8 @@ const Login = () => {
 
             <br /><br /><br />
 
-            <p>admin@mail.com</p>
-            <p>hint: admin@1234jkl</p>
+            {/* <p>admin@mail.com</p>
+            <p>hint: admin@1234jkl</p> */}
             <br></br>
             <form onSubmit={handleSubmit}>
                 <label>Email</label>
