@@ -1,88 +1,115 @@
-import { useState, useEffect } from 'react';
-import '../Styles/Cart.css';
-import Navbar from '../Components/Navbar';
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import { useState, useEffect } from "react";
+import "../Styles/Cart.css";
+import Navbar from "../Components/Navbar";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 
 const Cart = () => {
-    const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cart')) || []);
-    const [cartTotal, setCartTotal] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
 
-    const reduceQty = (item) => {
-        const updatedCart = cartItems
-            .map((cartItem) => {
-                if (cartItem.id === item.id) {
-                    const updatedQuantity = cartItem.quantity - 1;
-                    return updatedQuantity > 0 ? { ...cartItem, quantity: updatedQuantity } : null;
-                }
-                return cartItem;
-            })
-            .filter(Boolean); // Remove null items
-        setCartItems(updatedCart);
-    };
+  // Initialize cart from localStorage
+  const initializeCart = () => {
+    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(savedCart);
+  };
 
-    const increaseQty = (item) => {
-        const updatedCart = cartItems.map((cartItem) => {
-            if (cartItem.id === item.id) {
-                return { ...cartItem, quantity: cartItem.quantity + 1 };
-            }
-            return cartItem;
-        });
-        setCartItems(updatedCart);
-    };
+  // Add or update an item in the cart
+  const addOrUpdateItem = (newItem) => {
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem._id === newItem._id) {
+        return { ...cartItem, quantity: cartItem.quantity + newItem.quantity };
+      }
+      return cartItem;
+    });
 
-    const removeFromLocalStorage = (itemId) => {
-        const updatedCart = cartItems.filter((item) => item.id !== itemId);
-        setCartItems(updatedCart); // Update state
-    };
+    // Add new item if it's not already in the cart
+    if (!cartItems.some((item) => item._id === newItem._id)) {
+      updatedCart.push(newItem);
+    }
 
-    useEffect(() => {
-        // Calculate total price
-        let totalPrice = 0;
-        cartItems.forEach((item) => {
-            totalPrice += parseFloat(item.price) * item.quantity;
-        });
-        setCartTotal(totalPrice);
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
-        // Update localStorage whenever cart changes
-        localStorage.setItem('cart', JSON.stringify(cartItems));
-    }, [cartItems]);
-    useEffect(() => {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        setCartItems(cart);
-    }, []);
-    
+  // Increase item quantity
+  const increaseQty = (item) => {
+    const updatedCart = cartItems.map((cartItem) => {
+      if (cartItem._id === item._id) {
+        return { ...cartItem, quantity: cartItem.quantity + 1 };
+      }
+      return cartItem;
+    });
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
 
-    return (
-        <>
-            <Navbar />
-            <Header />
-            <h1>Cart Page</h1>
-            {cartItems.length > 0 ? (
-                cartItems.map((item) => (
-                    <div key={item.id} id="cartdiv">
-                        <img src={item.photo} alt={item.name} width={'80px'} />
-                        <h3>{item.name}</h3>
-                        <h3>Price: ${item.price}</h3>
-                        <section>
-                            <button onClick={() => increaseQty(item)}>+</button>
-                            <h3 style={{ textAlign: 'center' }}>Qty. {item.quantity}</h3>
-                            <button onClick={() => reduceQty(item)}>-</button>
-                        </section>
-                        <button onClick={() => removeFromLocalStorage(item.id)}>Remove</button>
-                    </div>
-                ))
-            ) : (
-                <p>Your cart is empty.</p>
-            )}
-            <div id="ordervalue">
-                <p style={{ fontSize: '20px' }}>Order Value: {Math.floor(cartTotal)}$ Only</p>
-                <p style={{ fontSize: '20px' }}>Delivery: FREE</p>
-                <button>Proceed to Pay</button>
-            </div>
-            <Footer />
-        </>
-    );
+  // Decrease item quantity
+  const reduceQty = (item) => {
+    const updatedCart = cartItems
+      .map((cartItem) => {
+        if (cartItem._id === item._id) {
+          const updatedQuantity = cartItem.quantity - 1;
+          return updatedQuantity > 0 ? { ...cartItem, quantity: updatedQuantity } : null;
+        }
+        return cartItem;
+      })
+      .filter(Boolean); // Remove null items
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  // Remove item from cart
+  const removeFromCart = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item._id !== itemId);
+    setCartItems(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
+  // Calculate total price
+  const calculateTotal = () => {
+    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  useEffect(() => {
+    initializeCart();
+  }, []);
+
+  return (
+    <>
+      <Navbar />
+      <Header />
+      <h1>Cart Page</h1>
+      {console.log(cartItems)}
+      {cartItems.length > 0 ? (
+        cartItems.map((item) => (
+          <div key={item._id} id="cartdiv">
+            <img src={item.photo} alt={item.name} width="80px" />
+            <h3>{item.name}</h3>
+            <h3>Price: ${item.price}</h3>
+            <h3>Subtotal: ${item.price * item.quantity}</h3>
+            <section>
+              <button onClick={() => increaseQty(item)}>+</button>
+              <h3 style={{ textAlign: "center" }}>Qty: {item.quantity}</h3>
+              <button onClick={() => reduceQty(item)} disabled={item.quantity <= 1}>
+                -
+              </button>
+            </section>
+            <button onClick={() => removeFromCart(item._id)}>Remove</button>
+          </div>
+        ))
+      ) : (
+        <p>Your cart is empty.</p>
+      )}
+      <div id="ordervalue">
+        <p style={{ fontSize: "20px" }}>
+          Order Value: ${calculateTotal().toFixed(2)}
+        </p>
+        <p style={{ fontSize: "20px" }}>Delivery: FREE</p>
+        <button disabled={cartItems.length === 0}>Proceed to Pay</button>
+      </div>
+      <Footer />
+    </>
+  );
 };
 
 export default Cart;

@@ -1,0 +1,84 @@
+/* Wrapper for the product detail container */
+.product-detail-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styling for the product image */
+.product-detail-container img {
+    width: 100%;
+    max-width: 400px; /* Adjust the max-width */
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Styling for product name */
+.product-detail-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Styling for the product price */
+.product-detail-container h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Styling for the "Add to cart" button */
+.product-detail-container button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.product-detail-container button:hover {
+    background-color: #ff4c4c;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Loading message styling */
+.loading-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+/* Mobile responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .product-detail-container img {
+        max-width: 90%;
+    }
+
+    .product-detail-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .product-detail-container h3 {
+        font-size: 1.3rem;
+    }
+
+    .product-detail-container button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

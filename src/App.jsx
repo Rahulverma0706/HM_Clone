@@ -5,7 +5,7 @@ import Products from './Components/Products'
 import Cart from "./Pages/Cart"
 import PrivateRoute from "./PrivateRoute/PrivateRoute"
 import ProductDetail from "./Components/ProductDetail"
-
+import Register from "./Pages/Register"
 
 
 function App() {
@@ -13,19 +13,15 @@ function App() {
     <>
     <Routes>
       <Route path="/" element={<Home/>}></Route>
+      <Route path="/register" element={<Register/>} />
       <Route path="/login" element={<Login/>}></Route>
       <Route path="/products" element={
-      // <PrivateRoute>
-      <Products/>
-      // </PrivateRoute>
-      }></Route> 
-      {/* { <Route path="/products/:id" element={
         // <PrivateRoute>
-          <ProductDetail />
-          // </PrivateRoute>
-        }/>} */}
-        <Route path="/products/:id" element={<ProductDetail />} />
-
+        <Products/>
+        // </PrivateRoute>
+        }></Route> 
+      <Route path="/products/:id" element={<ProductDetail />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/cart" element={<Cart/>}></Route>
     </Routes>
 

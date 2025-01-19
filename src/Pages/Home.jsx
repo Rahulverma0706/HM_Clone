@@ -29,6 +29,7 @@ const Home = () => {
     <h3>Spring update</h3>
     <p>New season essentials.</p>
     <button>Shop now</button>
+    <Slideshow/>
         <PopoverTrigger>
         <img src="https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc1%2F85%2Fc185e088726346b29907f834e46dd5a694585566.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/fullscreen]" style={{margin:'auto',width:'450px', paddingTop:'30px'}}/>
             
@@ -89,7 +90,6 @@ const Home = () => {
 </Tabs>
    </div> */}
     
-<Slideshow/>
 <Footer/>      
     </>
   )

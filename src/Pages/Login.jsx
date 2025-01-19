@@ -1,49 +1,72 @@
-import { useContext, useState } from 'react';
-import '../Styles/Login.css';
-import { AuthContext } from '../Context/ContextProvider';
-
-
+import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import '../Styles/Login.css';  // Import the CSS file
+import Navbar from "../Components/Navbar";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
+import { AuthContext } from '../Context/ContextProvider'
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [pass, setPass] = useState('');
-    const{isLogin, setIsLogin} = useContext(AuthContext)
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({ email: '', password: '' });
 
-    function handleSubmit(e) {
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (email == 'admin@mail.com' && pass == 'admin@1234jkl') {
-            setIsLogin(true)
-            console.log(isLogin);
-        } else {
-            alert('You are logged in!');
+        try {
+            const response = await fetch('http://localhost:5000/user/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                alert('Login successful');
+                
+                localStorage.setItem('token', data.token); // Save token to localStorage
+                navigate('/');
+            } else {
+                alert(data.error || 'Invalid credentials');
+                navigate('/register')
+            }
+        } catch (err) {
+            console.error('Error:', err);
         }
-    }
+    };
 
     return (
-        <div id='Loginbox'>
-            
-            <h1>Log in</h1>
-            <br /><br />
-            <h2>Become a member — don’t miss out on deals, offers, discounts and bonus vouchers.</h2>
-
-            <br /><br /><br />
-
-            {/* <p>admin@mail.com</p>
-            <p>hint: admin@1234jkl</p> */}
-            <br></br>
-            <form onSubmit={handleSubmit}>
-                <label>Email</label>
-                <br />
-                <input type="email" onChange={(e) => setEmail(e.target.value)} />
-                <br />
-                <label>Password</label>
-                <br />
-                <input type="password" onChange={(e) => setPass(e.target.value)} />
-                <br />
-                <button type='submit'>Submit</button>
-            </form>
-            <br /><br /><br /><br />
-           <a href="/"><h2>H&M Membership</h2></a> 
+        <>
+        <Navbar/>
+        <Header/>
+        <div className="parent-login">
+            <div className="login-form">
+                <h2>Login</h2>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        value={formData.password}
+                        onChange={handleChange}
+                        required
+                    />
+                    <button type="submit">Login</button>
+                </form>
+            </div>
         </div>
+        <Footer/>
+        </>
     );
 };
 

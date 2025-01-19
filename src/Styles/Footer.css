@@ -1,18 +1,73 @@
-#footer{
+/* General Footer Styling */
+#footer {
     display: flex;
-    background-color: rgb(228,228,228);
-    width: 70%;
-    margin: auto;
-}
-#footer>section{
-    width: 70%;
-    background-color: rgb(228,228,228);
-    
-}
-#footer>section>ul{
-    list-style-type: none;
-}
-#footer>section>ul>li{
-    margin: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(228, 228, 228);
+    padding: 40px 10%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Section Styling */
+#footer > section {
+    width: 23%;
+    margin-bottom: 20px;
+}
+
+#footer > section > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List Item Styling */
+#footer > section > ul > li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for List Items */
+#footer > section > ul > li:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Sign-Up Section Styling */
+#footer > section p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+#footer > section a p {
+    color: #007bff;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effect for 'Read More' Link */
+#footer > section a p:hover {
+    color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #footer {
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer > section {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    #footer > section > ul > li {
+        font-size: 16px;
+    }
 }

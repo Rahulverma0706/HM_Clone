@@ -1,65 +1,144 @@
-h1{
+/* General Page Styling */
+h1 {
     text-align: center;
     font-size: 50px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: grey;
-
 }
-#ParnetCartDiv{
-    width: 70%;
+
+/* Cart container */
+#ParnetCartDiv {
+    width: 80%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    padding: 20px;
 }
-#cartdiv{
-    
 
-
-    padding: 10px;
-    gap: 10px;
+/* Individual cart item */
+#cartdiv {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+}
 
-}
-#hover{
-    position: relative;
-}
-#hover>button{
-    position: absolute;
-    right: 45%;
-
-    top:45%;
-    background-color: white;
-    color: black;
-    border: none;
-}
-#hover>button:hover{
-    background-color: black;
-    color: white;
-    transition: 500ms;
-}
-#cartdiv>img{
-    overflow: hidden;
+/* Cart item image */
+#cartdiv > img {
+    width: 15%;
+    height: auto;
     border-radius: 12px;
-    margin: auto;
-}
-#cartdiv>button{
-    width: 50%;
-    height: 30%;
-}
-#ordervalue{
-    
-    border: 2px solid black;
-    text-align: center;
-    
-}
-#ordervalue>button{
-    margin:10px
+    object-fit: cover;
+    margin-bottom: 15px;
 }
 
-#ordervalue>button:hover{
-    margin:10px;
-    background-color: black;
-    transition: 500ms;
+/* Cart item details */
+#cartdiv h3 {
+    margin: 8px 0;
+    font-size: 1.2rem;
+}
+
+/* Quantity section */
+#cartdiv section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+#cartdiv button {
+    width: 30px;
+    height: 30px;
+    background-color: #4CAF50;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#cartdiv button:hover {
+    background-color: #45a049;
+}
+
+/* Remove item button */
+#cartdiv > button {
+    width: 15%;
+    padding: 12px;
+    height: 40px;
     
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#cartdiv > button:hover {
+    background-color: #c0392b;
+}
+
+/* Order Value Section */
+#ordervalue {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#ordervalue p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Proceed to Pay button */
+#ordervalue > button {
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#ordervalue > button:hover {
+    background-color: #45a049;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #ParnetCartDiv {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    #cartdiv {
+        padding: 15px;
+    }
+
+    #cartdiv > h3 {
+        font-size: 1rem;
+    }
+
+    #ordervalue > button {
+        font-size: 1rem;
+    }
 }

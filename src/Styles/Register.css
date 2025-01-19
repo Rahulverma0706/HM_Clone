@@ -1,16 +1,15 @@
-/* Login container */
-.parent-login {
+/* Register form container */
+.parent-detail {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    background-color: #fefefe;
+    min-height: 80vh; /* Ensure it takes up full viewport height */
 }
 
 /* Form styling */
-.login-form {
+.register-form {
     background-color: #fff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -23,7 +22,7 @@
 }
 
 /* Heading */
-.login-form h2 {
+.register-form h2 {
     text-align: center;
     font-size: 2rem;
     color: #333;
@@ -31,7 +30,7 @@
 }
 
 /* Input field styling */
-.login-form input {
+.register-form input {
     width: 100%;
     padding: 12px 15px;
     margin: 10px 0;
@@ -43,13 +42,13 @@
 }
 
 /* Focused input field */
-.login-form input:focus {
+.register-form input:focus {
     border: 1px solid #4CAF50;
     outline: none;
 }
 
 /* Submit button styling */
-.login-form button {
+.register-form button {
     width: 100%;
     padding: 14px;
     background-color: #4CAF50;
@@ -62,12 +61,12 @@
 }
 
 /* Button hover effect */
-.login-form button:hover {
+.register-form button:hover {
     background-color: #45a049;
 }
 
 /* Error message styling */
-.login-form .error-message {
+.register-form .error-message {
     color: red;
     font-size: 0.9rem;
     margin-top: 10px;
@@ -75,15 +74,15 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
-    .login-form {
+    .register-form {
         padding: 20px;
     }
 
-    .login-form h2 {
+    .register-form h2 {
         font-size: 1.8rem;
     }
 
-    .login-form button {
+    .register-form button {
         font-size: 1rem;
     }
 }

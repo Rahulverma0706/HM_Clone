@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import "../Styles/ProductDetail.css";
 const ProductDetail = () => {
     const { id } = useParams(); // Extract 'id' from URL parameters
-    console.log(id);
     
     const [newData, setNewData] = useState(null); // Initialize state for product data
     const [error, setError] = useState(null); // State to handle errors
@@ -30,10 +29,30 @@ const ProductDetail = () => {
         }
     };
     
-
     useEffect(() => {
         fetchProductData()
-    },[id]);
+    }, [id]);
+
+    // Handle Add to Cart functionality
+    const addToCart = () => {
+        const cartItems = JSON.parse(localStorage.getItem("cart")) || []; // Fetch existing cart from localStorage
+
+        if (newData) {
+            const existingItemIndex = cartItems.findIndex((item) => item._id === newData._id);
+
+            if (existingItemIndex > -1) {
+                // If the item already exists, increment the quantity
+                cartItems[existingItemIndex].quantity += 1;
+            } else {
+                // If the item doesn't exist, add it with a quantity of 1
+                cartItems.push({ ...newData, quantity: 1 });
+            }
+
+            // Save the updated cart back to localStorage
+            localStorage.setItem("cart", JSON.stringify(cartItems));
+            alert(`${newData.name} added to cart!`);
+        }
+    };
 
     // Display an error if something goes wrong
     if (error) {
@@ -63,16 +82,17 @@ const ProductDetail = () => {
         <div>
             <Navbar />
             <Header />
-            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <div style={{ textAlign: "center", marginBottom: "50px" }} className="product-detail-container">
                 <img
                     src={newData.photo}
                     alt={newData.name}
                     width={"350px"}
                     style={{ margin: "auto", marginTop: "70px", marginBottom: "30px" }}
+                    className="product-image"
                 />
                 <h2>{newData.name}</h2>
                 <h3>Rs.{newData.price}/-</h3>
-                <button>Add to cart</button>
+                <button onClick={addToCart}>Add to cart</button>
             </div>
             <Footer />
         </div>

@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/products');
+const userRoutes = require('./routes/User');
 require('dotenv').config(); // Load environment variables
 const express = require('express');
 const app = express();
 const cors = require('cors')
 const morgan = require('morgan')
-
+const authenticateToken = require('./middleware/userauthenticateToken')
 app.use(morgan('dev'));
 
 app.use(cors({
@@ -28,8 +29,14 @@ mongoose.connect(MONGO_URI)
 // Middleware for JSON parsing
 app.use(express.json());
 
+app.get('/protected', authenticateToken, (req, res) => {
+    res.send('This is a protected route');
+});
+
+
 // Routes
 app.use('/products', productRoutes);
+app.use('/user', userRoutes);
 
 // Serve Homepage
 app.get('/', (req, res) => {
