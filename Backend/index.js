@@ -14,7 +14,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary methods
 }));
 
-
 const PORT = 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
