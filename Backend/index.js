@@ -10,7 +10,7 @@ const authenticateToken = require('./middleware/userauthenticateToken')
 app.use(morgan('dev'));
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend's URL
+    origin: 'http://localhost:5173'|| 'https://rahul-verma-hm.vercel.app',// Replace with your frontend's URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary methods
 }));
 
