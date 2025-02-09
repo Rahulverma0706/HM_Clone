@@ -9,10 +9,26 @@ const morgan = require('morgan')
 const authenticateToken = require('./middleware/userauthenticateToken')
 app.use(morgan('dev'));
 
-app.use(cors({
-    origin: 'http://localhost:5173'|| 'https://rahul-verma-hm.vercel.app',// Replace with your frontend's URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow necessary methods
-}));
+const cors = require("cors");
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://rahul-verma-hm.vercel.app",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // Allow credentials if needed
+  })
+);
 
 const PORT = 5000;
 const MONGO_URI = process.env.MONGO_URI;
