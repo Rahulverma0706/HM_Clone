@@ -9,10 +9,10 @@ const morgan = require('morgan')
 const authenticateToken = require('./middleware/userauthenticateToken')
 app.use(morgan('dev'));
 
-// const cors = require("cors");
 
 const allowedOrigins = [
    "https://rahul-verma-hm.vercel.app",
+   "http://localhost:5173"
 ];
 
 app.use(
@@ -60,3 +60,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+

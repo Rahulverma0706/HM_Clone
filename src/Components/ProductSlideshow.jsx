@@ -12,7 +12,7 @@ const Slideshow = () => {
   // Fetch data from the API
   const fetchProducts = async () => {
     try {
-      const response = await fetch('https://hm-clone.onrender.com/products/page'); // Ensure the URL is correct
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products/page`); // Ensure the URL is correct
       const data = await response.json();
       setProducts(data); // Set the products state with fetched data
     } catch (error) {

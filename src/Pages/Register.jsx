@@ -15,7 +15,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://hm-clone.onrender.com/user/register', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/user/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),

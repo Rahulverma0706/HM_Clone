@@ -53,42 +53,6 @@ const Home = () => {
    </div>
 
    <h3>New Arrivals</h3>
-   {/* <div>
-   <Tabs variant='soft-rounded' colorScheme='green'  >
-  <TabList style={{ marginBottom: '20px', display: 'flex', gap: '100px', margin :'auto', textAlign:'center' }}>
-    <Tab>Ladies</Tab>
-    <Tab>Men</Tab>
-    <Tab>Divided</Tab>
-    <Tab>Baby</Tab>
-    <Tab>Kids</Tab>
-    <Tab>H&M HOME</Tab>
-    <Tab>Sport</Tab>
-  </TabList>
-  <TabPanels>
-    <TabPanel>
-      <p>Ladies</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Men</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Divided</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Baby</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Kids</p>
-    </TabPanel>
-    <TabPanel>
-      <p>H&M HOME</p>
-    </TabPanel>
-    <TabPanel>
-      <p>Sport</p>
-    </TabPanel>
-  </TabPanels>
-</Tabs>
-   </div> */}
     
 <Footer/>      
     </>
