@@ -12,8 +12,7 @@ app.use(morgan('dev'));
 // const cors = require("cors");
 
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://rahul-verma-hm.vercel.app",
+   "https://rahul-verma-hm.vercel.app",
 ];
 
 app.use(
