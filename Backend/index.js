@@ -9,7 +9,7 @@ const morgan = require('morgan')
 const authenticateToken = require('./middleware/userauthenticateToken')
 app.use(morgan('dev'));
 
-const cors = require("cors");
+// const cors = require("cors");
 
 const allowedOrigins = [
   "http://localhost:5173",
