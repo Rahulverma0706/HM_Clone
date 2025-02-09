@@ -13,7 +13,7 @@ function FetchedData() {
   // Fetch product data from the API
   const getData = async () => {
     try {
-      const res = await fetch("http://localhost:5000/products/page");
+      const res = await fetch("https://hm-clone.onrender.com/products/page");
       const preData = await res.json();
       setData(preData); // Set data once fetched from the API
     } catch (err) {

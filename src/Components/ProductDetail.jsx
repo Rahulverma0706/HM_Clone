@@ -17,7 +17,7 @@ const ProductDetail = () => {
         }
     
         try {
-            const response = await fetch(`http://localhost:5000/products/${id}`);
+            const response = await fetch(`https://hm-clone.onrender.com/products/${id}`);
             if (!response.ok) {
                 throw new Error("Failed to fetch product details");
             }
