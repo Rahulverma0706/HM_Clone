@@ -1,3 +1,5 @@
+import require from 'dotenv'
+import process from 'dotenv'
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/products');
 const userRoutes = require('./routes/User');

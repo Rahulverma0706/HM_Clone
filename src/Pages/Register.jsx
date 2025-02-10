@@ -3,9 +3,10 @@ import '../Styles/Register.css';
 import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-
+import { useNavigate } from 'react-router-dom';
 const Register = () => {
     const [formData, setFormData] = useState({ name: '', email: '', password: '' });
+    const navigate = useNavigate()
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,6 +24,8 @@ const Register = () => {
             const data = await response.json();
             if (response.ok) {
                 alert('Registration successful');
+                navigate('/login')
+                
             } else {
                 alert(data.error || 'Something went wrong');
             }

@@ -3,7 +3,7 @@ import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
 import Slideshow from '../Components/ProductSlideshow'
 import '../Styles/Home.css'
-import { Popover, PopoverTrigger,  PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react'
+import { Popover, PopoverTrigger,  PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody,} from '@chakra-ui/react'
 
 const Home = () => {
   

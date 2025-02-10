@@ -4,7 +4,7 @@ import '../Styles/Login.css';  // Import the CSS file
 import Navbar from "../Components/Navbar";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
-import { AuthContext } from '../Context/ContextProvider'
+// import { AuthContext } from '../Context/ContextProvider'
 const Login = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({ email: '', password: '' });
