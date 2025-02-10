@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Header from "./Header";
 import Footer from "./Footer";
 
+
 function FetchedData() {
   const [data, setData] = useState([]); // Stores the fetched data
   const [sortOption, setSortOption] = useState(""); // For sorting products
@@ -13,6 +14,7 @@ function FetchedData() {
   // Fetch product data from the API
   const getData = async () => {
     try {
+      // console.log(import.meta.env.VITE_BACKEND_URL)
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/products/page`);
       const preData = await res.json();
       setData(preData); // Set data once fetched from the API
